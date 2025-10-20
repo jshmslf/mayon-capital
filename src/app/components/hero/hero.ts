@@ -17,7 +17,7 @@ export class Hero {
   };
 
   getBackgroundUrl() {
-    return '/background.png';
+    return './background.png';
   }
 
 }
