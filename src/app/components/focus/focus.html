@@ -1,0 +1,12 @@
+<section class="focus">
+    <h2>Focus</h2>
+    <div class="breakline"></div>
+
+    <div class="focusItems">
+        <div *ngFor="let item of focusItems" class="focusItem">
+            <img [src]="item.img" [alt]="item.title" />
+            <span>{{ item.title }}</span>
+            <p>{{ item.desc }}</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,124 @@
+.focus {
+  background-color: white;
+  text-align: center;
+  padding: 2rem 7rem 0 7rem;
+}
+
+.focus h2 {
+  color: #000000;
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 1rem;
+}
+
+.breakline {
+  width: 100%;
+  height: 1px;
+  background-color: #afafaf;
+  margin: 10px auto 30px;
+}
+
+.focusItems {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.focusItem {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 340px;
+}
+
+.focusItem img {
+  width: 100%;
+  max-width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.focusItem span {
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  color: #000000;
+}
+
+.focusItem p {
+  padding-top: 1rem;
+  font-size: 1rem;
+  color: #555;
+  max-width: 90%;
+  line-height: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .focus {
+    padding: 2rem 3rem 0 3rem;
+  }
+
+  .focusItem img {
+    max-width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .focus {
+    padding: 2rem 1.5rem 0 1.5rem;
+  }
+
+  .focusItems {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .focusItem {
+    max-width: 100%;
+  }
+
+  .focusItem img {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .focusItem span {
+    font-size: 1.3rem;
+  }
+
+  .focusItem p {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .focus {
+    padding: 1.5rem 1rem 0 1rem;
+  }
+
+  .focusItem img {
+    max-width: 150px;
+    height: 150px;
+  }
+
+  .focusItem span {
+    font-size: 1.1rem;
+  }
+
+  .focusItem p {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+}

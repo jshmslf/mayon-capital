@@ -1,0 +1,43 @@
+.footer {
+  width: 100%;
+  background-color: rgba(0, 0, 50, 1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 1rem 6rem 1rem 6rem;
+}
+
+.linkedin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+}
+
+.textContainer {
+  color: rgb(161, 161, 161);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .textContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .footer {
+    padding: 1rem 2rem;
+  }
+}
