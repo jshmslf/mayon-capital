@@ -1,52 +1,49 @@
 <section class="contact">
     <div class="left-column">
-        <ng-container *ngIf="!showForm && !submitted">
-            <div class="info-row">
-                <div class="text">
-                    <span>Mayon Capital</span>
-                    <p>Carmel, California, United States</p>
-                    <a href="mailto:invest@mayoncapital.com">invest@mayoncapital.com</a>
+        <!-- Default info -->
+        <div *ngIf="!showForm && !submitted" @enter class="info-row">
+            <div class="text">
+                <span>Mayon Capital</span>
+                <p>Carmel, California, United States</p>
+                <a href="mailto:invest@mayoncapital.com">invest@mayoncapital.com</a>
+            </div>
+            <button class="button" (click)="handleButtonClick()">Get in touch.</button>
+        </div>
+
+        <!-- Success message -->
+        <div *ngIf="submitted" @enter class="success-message">
+            <fa-icon [icon]="faCheckCircle" class="success-icon"></fa-icon>
+            <p>Thank you for your inquiry! We will get back to you within 48 hours.</p>
+        </div>
+
+        <!-- Form -->
+        <div *ngIf="showForm && !submitted" @enter class="form-container">
+            <h2>Get in touch.</h2>
+            <form class="form" (submit)="handleSubmit($event)" novalidate>
+                <input type="text" name="name" placeholder="Name*" [(ngModel)]="formData.name" />
+                <p class="error" *ngIf="errors.name">{{ errors.name }}</p>
+
+                <input type="text" name="phone" placeholder="Phone" [(ngModel)]="formData.phone" />
+
+                <input type="email" name="email" placeholder="Email*" [(ngModel)]="formData.email" />
+                <p class="error" *ngIf="errors.email">{{ errors.email }}</p>
+
+                <textarea name="message" placeholder="Tell us more about your event!*" [(ngModel)]="formData.message"
+                    rows="4"></textarea>
+                <p class="error" *ngIf="errors.message">{{ errors.message }}</p>
+
+                <small>
+                    This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+                </small>
+
+                <div class="form-buttons">
+                    <button type="submit" class="send-button" [disabled]="sending">
+                        {{ sending ? 'Sending...' : 'Send' }}
+                    </button>
+                    <button type="button" class="cancel-button" (click)="handleCancel()">Cancel</button>
                 </div>
-                <button class="button" (click)="handleButtonClick()">Get in touch.</button>
-            </div>
-        </ng-container>
-
-        <ng-container *ngIf="submitted">
-            <div class="success-message">
-                <fa-icon [icon]="faCheckCircle" class="success-icon"></fa-icon>
-                <p>Thank you for your inquiry! We will get back to you within 48 hours.</p>
-            </div>
-        </ng-container>
-
-        <ng-container *ngIf="showForm && !submitted">
-            <div class="form-container" [class.slide-in]="showForm">
-                <h2>Get in touch.</h2>
-                <form class="form" (submit)="handleSubmit($event)" novalidate>
-                    <input type="text" name="name" placeholder="Name*" [(ngModel)]="formData.name" />
-                    <p class="error" *ngIf="errors.name">{{ errors.name }}</p>
-
-                    <input type="text" name="phone" placeholder="Phone" [(ngModel)]="formData.phone" />
-
-                    <input type="email" name="email" placeholder="Email*" [(ngModel)]="formData.email" />
-                    <p class="error" *ngIf="errors.email">{{ errors.email }}</p>
-
-                    <textarea name="message" placeholder="Tell us more about your event!*"
-                        [(ngModel)]="formData.message" rows="4"></textarea>
-                    <p class="error" *ngIf="errors.message">{{ errors.message }}</p>
-
-                    <small>
-                        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
-                    </small>
-
-                    <div class="form-buttons">
-                        <button type="submit" class="send-button" [disabled]="sending">
-                            {{ sending ? "Sending..." : "Send"}}
-                        </button>
-                        <button type="button" class="cancel-button" (click)="handleCancel()">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </ng-container>
+            </form>
+        </div>
     </div>
 
     <div class="right-column">
