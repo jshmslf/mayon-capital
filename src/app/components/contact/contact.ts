@@ -1,17 +1,22 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import emailjs from '@emailjs/browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule],
   templateUrl: './contact.html',
   styleUrls: ['./contact.css']
 })
 export class ContactComponent {
+  faCheckCircle = faCheckCircle;
   showForm = false;
   submitted = false;
+  sending = false;
 
   formData = {
     name: '',
@@ -21,6 +26,8 @@ export class ContactComponent {
   };
 
   errors: Partial<typeof this.formData> = {};
+
+  constructor(private ngZone: NgZone) {}
 
   handleButtonClick() {
     this.showForm = true;
@@ -46,14 +53,37 @@ export class ContactComponent {
 
   handleSubmit(event: Event) {
     event.preventDefault();
+
     const validationErrors = this.validate();
     if (Object.keys(validationErrors).length > 0) {
       this.errors = validationErrors;
       return;
     }
 
-    this.submitted = true;
-    this.formData = { name: '', phone: '', email: '', message: '' };
-    this.errors = {};
+    this.sending = true;
+
+    // temporary emailjs using smtp
+    const serviceID = "service_o661b1z";
+    const templateID = "template_um22azj";
+    const publicKey = "G1vUf2ab4IcxMQPWW";
+
+
+    emailjs.send(serviceID, templateID, this.formData, publicKey)
+      .then((response) => {
+        this.ngZone.run(() => {
+          console.log("Email sent via SSL!", response.status, response.text);
+          this.submitted = true;
+          this.showForm = false;
+          this.formData = { name: '', phone: '', email: '', message: '' };
+          this.errors = {};
+          this.sending = false;
+        });
+      })
+      .catch((error) => {
+        this.ngZone.run(() => {
+          console.error("Email sending failed", error);
+          this.sending = false;
+        });
+      });
   }
 }
