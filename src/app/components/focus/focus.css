@@ -1,7 +1,7 @@
 .focus {
   background-color: white;
   text-align: center;
-  padding: 2rem 17rem 0 17rem;
+  padding: 1.2rem 17.5vw 0 17.5vw; /* fixed margin */
 }
 
 .focus h2 {
@@ -14,17 +14,19 @@
 }
 
 .breakline {
-  width: 100%;
+  width: 65vw; /* scales wider as viewport grows */
+  max-width: 100%;
   height: 1px;
-  background-color: #afafaf;
-  margin: 10px auto 30px;
+  background-color: #d6d6d6;
+  margin: 10px auto 40px;
+  transition: width 0.3s ease; /* smooth widening when zooming */
 }
 
 .focusItems {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* keep items in one row */
   gap: 50px;
 }
 
@@ -33,13 +35,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 340px;
+  width: 377px;
+  flex: 0 0 377px; /* fixed width for 3 items in a row */
 }
 
 .focusItem img {
   width: 100%;
-  max-width: 340px;
-  height: 340px;
+  height: auto;
+  aspect-ratio: 1 / 1; /* ensures perfect circle */
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
@@ -60,64 +63,20 @@
   line-height: 1.5rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .focus {
-    padding: 2rem 3rem 0 3rem;
-  }
-
-  .focusItem img {
-    max-width: 250px;
-    height: 250px;
-  }
-}
-
-@media (max-width: 768px) {
+/* Responsive: switch to wrap layout on mobile */
+@media (max-width: 900px) {
   .focus {
     padding: 2rem 1.5rem 0 1.5rem;
   }
-
   .focusItems {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    flex-wrap: wrap; /* allow wrapping in mobile */
   }
 
   .focusItem {
-    max-width: 100%;
+    flex: 1 1 300px;
   }
 
-  .focusItem img {
-    max-width: 200px;
-    height: 200px;
-  }
-
-  .focusItem span {
-    font-size: 1.3rem;
-  }
-
-  .focusItem p {
-    font-size: 0.95rem;
-    line-height: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .focus {
-    padding: 1.5rem 1rem 0 1rem;
-  }
-
-  .focusItem img {
-    max-width: 150px;
-    height: 150px;
-  }
-
-  .focusItem span {
-    font-size: 1.1rem;
-  }
-
-  .focusItem p {
-    font-size: 0.9rem;
-    line-height: 1.3rem;
+  .breakline {
+    width: 85vw; /* slightly wider on smaller screens */
   }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, ChangeDetectorRef  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -36,7 +36,7 @@ export class ContactComponent {
 
   errors: Partial<typeof this.formData> = {};
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone, private cdr: ChangeDetectorRef) {}
 
   handleButtonClick() {
     this.showForm = true;
@@ -49,7 +49,6 @@ export class ContactComponent {
     this.showForm = false;
   }
 
-  /** Form validation logic */
   private validate(): Partial<typeof this.formData> {
     const newErrors: Partial<typeof this.formData> = {};
 
@@ -70,7 +69,6 @@ export class ContactComponent {
     return newErrors;
   }
 
-  /** Sends the form via EmailJS */
   handleSubmit(event: Event) {
     event.preventDefault();
 
@@ -94,6 +92,7 @@ export class ContactComponent {
           this.submitted = true;
           this.showForm = false;
           this.resetForm();
+          this.cdr.detectChanges();
         });
       })
       .catch((error) => {
@@ -101,11 +100,11 @@ export class ContactComponent {
         this.ngZone.run(() => {
           this.sending = false;
           alert('Something went wrong. Please try again later.');
+          this.cdr.detectChanges();
         });
       });
   }
 
-  /** Utility: clears all form data and validation */
   private resetForm() {
     this.formData = { name: '', phone: '', email: '', message: '' };
     this.errors = {};
