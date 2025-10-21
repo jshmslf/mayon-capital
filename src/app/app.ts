@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Header } from "./components/header/header"
 import { Footer } from './components/footer/footer';
 import { Hero } from './components/hero/hero';
@@ -11,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, Header, Footer, Hero, FocusComponent, PortfolioComponent, ContactComponent],
+  imports: [CommonModule, Header, Footer, Hero, FocusComponent, PortfolioComponent, ContactComponent],
   templateUrl: './app.html',
 styleUrls: ['./app.css']
 

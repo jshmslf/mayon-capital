@@ -1,6 +1,6 @@
 .portfolio {
   background-color: white;
-  padding: 6rem 7rem 0 7rem;
+  padding: 6rem 17rem 0 17rem;
   text-align: center;
 }
 
@@ -22,7 +22,7 @@
 
 .portfolioItems {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 15px;
   margin-top: 30px;
 }

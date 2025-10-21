@@ -1,12 +1,12 @@
 .footer {
   width: 100%;
-  background-color: rgba(0, 0, 50, 1);
+  background-color: rgba(0, 0, 50);
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  padding: 1rem 6rem 1rem 6rem;
+  padding: 1rem 17rem 1rem 17rem;
 }
 
 .linkedin {
@@ -26,6 +26,12 @@
   display: flex;
   justify-content: space-between;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem 3rem 1rem 3rem;
+  }
 }
 
 @media (max-width: 600px) {
