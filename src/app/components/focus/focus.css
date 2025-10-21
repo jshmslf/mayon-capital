@@ -29,7 +29,6 @@
 }
 
 .focusItem {
-  flex: 1 1 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
