@@ -10,13 +10,13 @@ import { CommonModule } from '@angular/common';
 })
 export class PortfolioComponent {
   portfolioItems = [
-    { src: './assets/logos/onflow.png', alt: 'OnFlow' },
-    { src: './assets/logos/farmatics.png', alt: 'Farmatics' },
-    { src: './assets/logos/knowz.png', alt: 'Knowz' },
-    { src: './assets/logos/mogo.png', alt: 'Mogo' },
-    { src: './assets/logos/mober.png', alt: 'Mober' },
-    { src: './assets/logos/feather-dynamics.png', alt: 'Feather Dynamics' },
-    { src: './assets/logos/wpl.png', alt: 'WPL' },
-    { src: './assets/logos/mayonventures.png', alt: 'Mayon Ventures' }
+    { src: './onflow.png', alt: 'OnFlow' },
+    { src: './farmatics.png', alt: 'Farmatics' },
+    { src: './knowz.png', alt: 'Knowz' },
+    { src: './mogo.png', alt: 'Mogo' },
+    { src: './mober.png', alt: 'Mober' },
+    { src: './feather-dynamics.png', alt: 'Feather Dynamics' },
+    { src: './wpl.png', alt: 'WPL' },
+    { src: './mayonventures.png', alt: 'Mayon Ventures' }
   ];
 }
