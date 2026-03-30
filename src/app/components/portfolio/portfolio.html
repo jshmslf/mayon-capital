@@ -1,10 +1,12 @@
 <section class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="breakline"></div>
+    <div class="inner">
+        <h2>Portfolio</h2>
+        <div class="breakline"></div>
 
-    <div class="portfolioItems">
-        <div *ngFor="let img of portfolioItems" class="portfolioItem">
-            <img [src]="img.src" [alt]="img.alt" />
+        <div class="portfolioItems">
+            <div *ngFor="let img of portfolioItems" class="portfolioItem">
+                <img [src]="img.src" [alt]="img.alt" />
+            </div>
         </div>
     </div>
 </section>

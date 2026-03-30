@@ -4,6 +4,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --fs-xl: clamp(2rem, 5vw, 3.5rem);
+  --fs-lg: clamp(1.4rem, 2.5vw, 2rem);
+  --fs-md: clamp(0.95rem, 1.5vw, 1.5rem);
+  --fs-sm: 1rem;
 }
 
 html,
@@ -36,11 +41,11 @@ a {
   text-decoration: none;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.inner {
+  max-width: 1390px;
   width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 5rem);
 }
 
 /* Mobile adjustments */

@@ -12,17 +12,17 @@ export class FocusComponent {
   focusItems = [
     {
       img: './deep_tech.png',
-      title: 'Deep Tech',
+      title: 'Aerospace',
       desc: 'We remain at the forefront of driving innovation in the domain of AI/ML, Aerospace, Robotics, MedTech, FarmTech, Biotech and Web3.0, continually propelling these fields forward.'
     },
     {
       img: './wealth.png',
-      title: 'Wealth',
+      title: 'Supply Chain',
       desc: 'Our astute investment methodology has proven to be a potent catalyst for a substantial enhancement in the net worth of our valued partners, achieving remarkable results in a remarkably brief span of time.'
     },
     {
       img: './infrastructure.png',
-      title: 'Infrastructure',
+      title: 'Internet of Things',
       desc: 'We boast a well-diversified portfolio of infrastructure projects spanning the globe, encompassing a wide spectrum of ventures such as communication infrastructure, commercial development and housing projects.'
     }
   ];

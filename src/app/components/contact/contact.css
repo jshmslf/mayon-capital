@@ -1,11 +1,14 @@
 .contact {
   background-color: white;
+  padding: 5rem 0 3rem;
+}
+
+.contact .inner {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   gap: 5rem;
-  padding: 5rem 23rem 3rem 23rem;
 }
 
 .left-column {
@@ -26,7 +29,6 @@
 
 .right-column .image-row img {
   width: 100%;
-  max-width: none;
   height: auto;
   object-fit: contain;
 }
@@ -44,15 +46,14 @@
 
 .text p {
   margin: 25px 0;
-  font-size: 1rem;
+  font-size: var(--fs-md);
   font-weight: 300;
 }
 
 .text span {
-  font-size: 1.3rem;
+  font-size: var(--fs-md);
 }
 
-/* Button */
 .button {
   padding: 18px 10px;
   background-color: rgb(0, 0, 50);
@@ -61,7 +62,7 @@
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: var(--fs-sm);
   transition: background-color 0.3s ease;
   width: 35%;
 }
@@ -70,10 +71,14 @@
   background-color: #000;
 }
 
-/* Form */
 .form-container {
   width: 100%;
   max-width: 500px;
+}
+
+.form-container h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: 1.5rem;
 }
 
 .form input,
@@ -82,7 +87,7 @@
   padding: 0.75rem 0.5rem;
   margin-bottom: 1rem;
   border: 1px solid #a5a5a5;
-  font-size: 1rem;
+  font-size: var(--fs-sm);
   background-color: white;
   color: #000;
   outline: none;
@@ -95,12 +100,11 @@
 
 .error {
   color: red;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   margin-top: -0.5rem;
   margin-bottom: 0.5rem;
 }
 
-/* Form buttons */
 .form-buttons {
   margin-top: 2rem;
   display: flex;
@@ -113,8 +117,8 @@
   padding: 1rem 2.5rem;
   background-color: rgb(0, 0, 50);
   color: white;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: var(--fs-sm);
   border: 1px solid #000;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -134,11 +138,10 @@
   color: #000;
   text-decoration: underline;
   border: none;
-  font-size: 1rem;
+  font-size: var(--fs-sm);
   cursor: pointer;
 }
 
-/* Success Message */
 .success-message {
   display: flex;
   flex-direction: column;
@@ -154,7 +157,6 @@
   margin-bottom: 1rem;
 }
 
-/* Fade-in keyframes (optional for static use) */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -166,12 +168,10 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact {
+@media (max-width: 900px) {
+  .contact .inner {
     flex-direction: column-reverse;
-    gap: 3rem;
-    padding: 3rem 2rem;
+    gap: 2rem;
   }
 
   .left-column,

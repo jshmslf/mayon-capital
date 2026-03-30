@@ -1,17 +1,21 @@
 .hero {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 85vh;
-  text-align: center;
-  padding: 0 175px 0 175px;
   background: transparent;
   color: #ffffff;
 }
 
+.hero .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .hero .title {
-  font-size: 4rem;
+  font-size: var(--fs-xl);
 }
 
 .underline {
@@ -22,19 +26,10 @@
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: var(--fs-lg);
 }
 
-@media (max-width: 768px) {
-  .hero {
-    padding: 20px 20px;
-  }
-
-  .hero .title {
-    font-size: 2.5rem;
-    margin-bottom: 4px;
-  }
-
+@media (max-width: 600px) {
   .underline {
     width: 100%;
   }
