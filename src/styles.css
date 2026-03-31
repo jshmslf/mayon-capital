@@ -4,6 +4,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #000034;
 
   --fs-xl: clamp(2rem, 5vw, 3.5rem);
   --fs-lg: clamp(1.4rem, 2.5vw, 2rem);
@@ -19,12 +20,6 @@ body {
 }
 
 body {
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/background.png');
-  background-size: cover;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

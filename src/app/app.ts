@@ -33,37 +33,20 @@ export class App implements OnInit{
 
     this.seo.setJsonLd({
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: 'My Article Title',
-      description: 'Short description',
-      image: 'https://mayoncapital.com/mayoncapital.png',
-      author: { '@type': 'Person', name: 'John Doe' },
-      publisher: {
-        '@type': 'Organization',
-        name: 'My Site',
-        logo: { '@type': 'ImageObject', url: 'https://mayoncapital.com/mayoncapital.png' }
-      },
-      datePublished: '2026-01-01',
-      dateModified: '2026-03-30'
-    });
-
-    // BreadcrumbList
-    this.seo.setJsonLd({
-      '@context': 'https://schema.org',
       '@graph': [
         {
           '@type': 'WebSite',
           '@id': 'https://mayoncapital.com/#website',
           url: 'https://mayoncapital.com',
           name: 'Mayon Capital',
-          description: 'Strategic investment and financial solutions.'
+          description: "Mayon Capital is a premier venture capital firm at the forefront of AI and ML innovation, backing early-stage startups developing transformative technologies."
         },
         {
           '@type': 'WebPage',
           '@id': 'https://mayoncapital.com/#webpage',
           url: 'https://mayoncapital.com',
-          name: 'Mayon Capital | Strategic Investment & Financial Solutions',
-          description: 'Mayon Capital delivers strategic financial solutions, portfolio management, and capital growth opportunities.',
+          name: 'Mayon Capital | AI & ML Venture Capital',
+          description: "Mayon Capital backs early-stage startups at the forefront of AI, ML, Aerospace, Robotics, and Deep Tech.",
           isPartOf: { '@id': 'https://mayoncapital.com/#website' }
         },
         {
@@ -75,15 +58,21 @@ export class App implements OnInit{
             '@type': 'ImageObject',
             url: 'https://mayoncapital.com/assets/mayon-metapic.png'
           },
-          description: 'A forward-thinking investment firm delivering strategic financial solutions and capital growth opportunities.',
+          description: "A premier venture capital firm specializing in AI and ML innovation, empowering early-stage founders to scale breakthrough technologies into market-leading companies.",
+          founder: {
+            '@type': 'Person',
+            name: 'Rhandal Sayat',
+            jobTitle: 'Chief Executive Officer',
+            worksFor: { '@id': 'https://mayoncapital.com/#organization' }
+          },
           contactPoint: {
             '@type': 'ContactPoint',
-            contactType: 'Customer Service',
+            contactType: 'Investor Relations',
             email: 'invest@mayoncapital.com',
             availableLanguage: 'English'
           },
           sameAs: [
-            'https://www.linkedin.com/company/mayoncapital',
+            'https://www.linkedin.com/company/mayoncapital'
           ]
         }
       ]

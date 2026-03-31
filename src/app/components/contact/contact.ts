@@ -29,6 +29,7 @@ export class ContactComponent {
 
   formData = {
     name: '',
+    company: '',
     phone: '',
     email: '',
     message: ''
@@ -106,7 +107,7 @@ export class ContactComponent {
   }
 
   private resetForm() {
-    this.formData = { name: '', phone: '', email: '', message: '' };
+    this.formData = { name: '', company: '', phone: '', email: '', message: '' };
     this.errors = {};
   }
 }
